@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './../Context/UserContext';
 
 const Login = () => {
 
 
+   const  {signIn } = useContext(AuthContext)
 
     const handleSubmit = event => {
 
@@ -15,7 +17,16 @@ const Login = () => {
 
         console.log(email,password);
 
+            signIn(email,password)
+            .then(result => {
 
+                const user = result.user;
+
+                console.log(user);
+
+            })
+
+            .catch(error => console.error(error))
 
 
 
