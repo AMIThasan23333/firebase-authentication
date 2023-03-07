@@ -27,8 +27,7 @@ const signIn = (email,password) => {
     return signInWithEmailAndPassword(auth,email,password)
 }
 
-
-  useEffect(() => {
+useEffect(() => {
 
     onAuthStateChanged(auth, currentUser => {
 
