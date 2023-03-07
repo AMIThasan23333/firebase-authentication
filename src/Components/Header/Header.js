@@ -15,7 +15,7 @@ const Header = () => {
 
         })
         .catch(error => console.error(error));
-        
+
 
 
     }
@@ -53,7 +53,13 @@ const Header = () => {
 
         {   user?.email && <span>Welcome {user.email}</span>}
 
+      {
+        user?.email ? 
+
         <button onClick={handleSignOut} className='btn btn-sm'>SignOut</button>
+
+        : <Link className='btn btn-sm' to='/login'> Login </Link>
+      }
 
 
 
